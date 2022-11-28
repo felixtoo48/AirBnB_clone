@@ -8,6 +8,7 @@ import cmd
 
 
 class HBNBCommand(cmd.Cmd):
+    """ command interpreter to interact with the storage"""
     prompt = "(hbnb)"
 
     def emptyline(self):

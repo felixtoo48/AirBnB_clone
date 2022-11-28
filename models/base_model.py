@@ -47,10 +47,10 @@ class BaseModel:
         self.updated_at = datetime.now()
         models.storage.save()
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         """ returns dictionary containing all key value pairs
         of __dict__ of the instance"""
-        dic = vars(self).copy()
+        dic = self.__dict__.copy()
         dic['__class__'] = self.__class__.__name__
         dic['updated_at'] = self.updated_at.isoformat()
         dic['created_at'] = self.created_at.isoformat()
