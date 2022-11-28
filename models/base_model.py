@@ -33,7 +33,7 @@ class BaseModel:
             self.updated_at = datetime.now()
             models.storage.new(self)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """ initialize str
         returns class name, id and the dictionary"""
         return "[{}] ({}) {}".format(self.__class__.__name__,
