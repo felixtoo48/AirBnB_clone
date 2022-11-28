@@ -16,8 +16,7 @@ Your shell should work like this in interactive mode:
 $ ./console.py
 (hbnb) help
 
-Documented commands (type help <topic>):
-========================================
+Documented commands
 EOF  help  quit
 
 (hbnb) 
@@ -28,8 +27,7 @@ But also in non-interactive mode: (like the Shell project in C)
 $ echo "help" | ./console.py
 (hbnb)
 
-Documented commands (type help <topic>):
-========================================
+Documented commands
 EOF  help  quit
 (hbnb) 
 $
