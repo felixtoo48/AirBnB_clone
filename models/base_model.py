@@ -31,13 +31,13 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """ initialize str
         returns class name, id and the dictionary"""
         return "[{:s}] ({}) {}".format(self.__class__.__name__,
-                  self.id, self.__dict__)
+                                       self.id, self.__dict__)
 
     def save(self):
         """ updates the public instance attributes
@@ -45,7 +45,7 @@ class BaseModel:
         invoke save function
         save to serialized file"""
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """ returns dictionary containing all key value pairs
