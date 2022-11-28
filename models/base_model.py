@@ -37,7 +37,7 @@ class BaseModel:
         """ initialize str
         returns class name, id and the dictionary"""
         return "[{}] ({}) {}".format(self.__class__.__name__,
-                                       self.id, self.__dict__)
+                                     self.id, self.__dict__)
 
     def save(self):
         """ updates the public instance attributes
