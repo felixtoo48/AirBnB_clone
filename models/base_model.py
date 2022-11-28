@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """ Module contains class BaseModel
-base class of all the classes in the project
+Base class of all the classes in the project
 """
+
 import uuid
 from datetime import datetime
 import models
 
 
 class BaseModel:
-    """Parent class for AirBnB clone project
+    """Base class for AirBnB clone project
     Methods:
         __init__(self, *args, **kwargs)
         __str__(self)
@@ -16,7 +17,7 @@ class BaseModel:
         __repr__(self)
         to_dict(self)
     """
-    def __init__(self, id):
+    def __init__(self, *args, **kwargs):
         """initializes object using dictionary if given otherwise
         it gives default value
         """
@@ -39,11 +40,18 @@ class BaseModel:
                   self.id, self.__dict__)
 
     def save(self):
-        """ updates the public instance attributes"""
+        """ updates the public instance attributes
+        update current date time
+        invoke save function
+        save to serialized file"""
         self.updated_at = datetime.now()
         storage.save()
-        return 
 
     def to_dict(self):
         """ returns dictionary containing all key value pairs
         of __dict__ of the instance"""
+        dic = vars(self).copy()
+        dic['__class__'] = self.__class__.__name__
+        dic['updated_at'] = self.updated_at.isoformat()
+        dic['created_at'] = self.created_at.isoformat()
+        return dic
