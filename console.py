@@ -57,7 +57,7 @@ class HBNBCommand(cmd.Cmd):
         """Create new instance of class, saves it and prints the id"""
         args = arg.split()
         if self.validate_arg(args, False, False):
-            obj = storage.classes()[args[0]]()
+            obj = storage.class_dict()[args[0]]()
             obj.save()
             print(obj.id)
 
@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             print([str(v) for k, v in storage.all().items()])
         else:
-            if args[0] not in storage.classes():
+            if args[0] not in storage.class_dict():
                 print("** class doesn't exist **")
             else:
                 print([str(v) for k, v in storage.all().items()
@@ -116,7 +116,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args) < 1:
             print("** class name missing **")
             return False
-        if args[0] not in storage.classes():
+        if args[0] not in storage.class_dict():
             print("** class doesn't exist **")
             return False
         if len(args) < 2 and validate_id:
