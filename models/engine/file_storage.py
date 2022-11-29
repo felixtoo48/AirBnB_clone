@@ -6,6 +6,7 @@ class for the airbnb clone
 import json
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
 
 
 class FileStorage:
@@ -23,7 +24,7 @@ class FileStorage:
 
     __file_path = 'file.json'
     __objects = {}
-    class_dict = {"BaseModel": BaseModel, "User": User}
+    class_dict = {"BaseModel": BaseModel, "User": User, "State": State}
 
     def all(self):
         """ returns dictionary of <class>.<id> objects instance"""
