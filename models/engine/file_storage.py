@@ -5,6 +5,7 @@ class for the airbnb clone
 """
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -22,7 +23,10 @@ class FileStorage:
 
     __file_path = 'file.json'
     __objects = {}
-    class_dict = {"BaseModel": BaseModel}
+    class_dict = {
+            "BaseModel": BaseModel
+            "User": User
+            }
 
     def all(self):
         """ returns dictionary of <class>.<id> objects instance"""
