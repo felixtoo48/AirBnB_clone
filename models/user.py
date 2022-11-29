@@ -3,16 +3,14 @@
 BaseModel"""
 
 from modules.base_model import BaseModel
+import json
 
 
 class User(BaseModel):
     """ initializes the user class
     Sub class of base model
-    Methods:
-        __init__(self)
     """
-    def __init__(self, email=None, password=None, first_name=None, last_name=None):
-        self.email = email
-        self.password = password
-        self.first_name = first_name
-        self.last_name = last_name
+        email = ""
+        password = ""
+        first_name = ""
+        last_name = ""
